@@ -4,6 +4,9 @@ call plug#begin('~/dotfiles/.vim/plugged')
 " Youcomplete me for auto complete
 Plug 'valloric/youcompleteme'
 
+" Darcula color theme
+Plug 'blueshirts/darcula'
+
 " Nerdtree a file navigation system for vim
 Plug 'preservim/nerdtree'
 autocmd vimenter * NERDTree
