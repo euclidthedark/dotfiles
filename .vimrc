@@ -18,7 +18,9 @@ colorscheme darcula
 set encoding=utf-8
 set hidden
 set noerrorbells
-set tabstop=2 softtabstop=2
+set expandtab
+set tabstop=2
+set softtabstop=2 
 set shiftwidth=2
 set smartindent
 
