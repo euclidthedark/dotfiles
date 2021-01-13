@@ -9,6 +9,11 @@ Plug 'blueshirts/darcula'
 
 " Nerdtree a file navigation system for vim
 Plug 'preservim/nerdtree'
+
+" Jedi autocomplete for python
+Plug 'davidhalter/jedi-vim'
+
+
 autocmd vimenter * NERDTree
 call plug#end()
 
