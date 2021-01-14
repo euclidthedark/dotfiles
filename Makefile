@@ -6,4 +6,5 @@ setup_linux:
 	nvm install lts/fermium
 	nvm alias default lts/fermium
 	nvm use default
+	cat ~/dotfiles/.bashrc >> ~/.bashrc
 
