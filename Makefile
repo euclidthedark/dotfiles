@@ -1,6 +1,6 @@
 setup_linux:
 	sudo apt update -y && sudo apt upgrade -y
-	sudo apt install python build-essential cmake vim-nox python3-dev mono-complete golang
+	sudo apt install python build-essential cmake vim-nox python3-dev mono-complete golang tmux
 	curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 	nvm install lts/fermium
 	nvm alias default lts/fermium

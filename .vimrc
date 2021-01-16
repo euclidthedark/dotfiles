@@ -25,6 +25,7 @@ set hidden
 set noerrorbells
 set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
 set smartindent
+set splitbelow
 
 set noswapfile
 set nobackup
