@@ -1,4 +1,3 @@
-
 # aliases
 alias python='python3'
 

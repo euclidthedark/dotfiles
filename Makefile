@@ -22,3 +22,6 @@ setup_vim:
 
 setup_ycm:
 	python3 ~/dotfiles/.vim/plugged/youcompleteme/install.py --clangd-completer --go-completer --ts-completer --rust-completer
+
+setup_neovim:
+	sudo apt install neovim
