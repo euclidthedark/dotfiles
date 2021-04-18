@@ -1,5 +1,6 @@
 # aliases
 alias python='python3'
+alias vim='nvim'
 
 # functions
 # update linux system
