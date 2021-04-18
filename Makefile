@@ -25,3 +25,5 @@ setup_ycm:
 
 setup_neovim:
 	sudo apt install neovim
+	mkdir .nvim
+	touch ./.nvim/init.vim
