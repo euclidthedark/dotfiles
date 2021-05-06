@@ -17,6 +17,9 @@ Plug 'davidhalter/jedi-vim'
 
 Plug 'editorconfig/editorconfig-vim'
 
+" Autocomplete pair types
+Plug 'jiangmiao/auto-pairs'
+
 
 autocmd vimenter * NERDTree
 call plug#end()
