@@ -1,6 +1,6 @@
 setup_linux:
 	sudo apt update -y && sudo apt upgrade -y
-	sudo apt install python build-essential cmake vim-nox python3-dev mono-complete golang tmux xclip pytlint python3-pip powerline-shell
+	sudo apt install python build-essential cmake vim-nox python3-dev mono-complete golang tmux xclip pytlint python3-pip
 	# install nvm
 	curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 	# install rustup for windows linux subsystem
