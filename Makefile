@@ -12,6 +12,11 @@ setup_linux:
 	cat ~/dotfiles/.bashrc >> ~/.bashrc
 	# Grab Plug for vim package management
 
+setup_tmux:
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+	tmux source ~/.tmux.conf
+
 setup_vim:
 	# Grab vim plug
 	rm -rf ~/.vimrc
