@@ -1,6 +1,7 @@
 # aliases
 alias python='python3'
 alias vim='nvim'
+alias pip='pip3'
 
 # functions
 # update linux system
@@ -10,6 +11,15 @@ update_linux () { sudo apt update -y; }
 update_apt_packages () { sudo apt upgrade -y; }
 
 # bash plugins and customization
+
+# Themes
+function _update_ps1() {
+  PS1=$(powerline-shell $?)
+}
+
+if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
+      PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
 
 # Autocompletes
 export NVM_DIR="$HOME/.nvm"

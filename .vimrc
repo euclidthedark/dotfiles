@@ -13,6 +13,10 @@ Plug 'preservim/nerdtree'
 " Jedi autocomplete for python
 Plug 'davidhalter/jedi-vim'
 
+" Editor config for JavaScript and Python
+
+Plug 'editorconfig/editorconfig-vim'
+
 
 autocmd vimenter * NERDTree
 call plug#end()
