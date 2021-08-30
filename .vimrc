@@ -5,7 +5,7 @@ call plug#begin('~/dotfiles/.vim/plugged')
 Plug 'valloric/youcompleteme'
 
 " Darcula color theme
-Plug 'blueshirts/darcula'
+Plug 'dracula/vim'
 
 " Nerdtree a file navigation system for vim
 Plug 'preservim/nerdtree'
@@ -25,7 +25,7 @@ autocmd vimenter * NERDTree
 call plug#end()
 
 syntax on
-colorscheme darcula
+colorscheme dracula
 
 set encoding=utf-8
 set hidden
