@@ -28,6 +28,9 @@ Plug 'editorconfig/editorconfig-vim'
 " Autocomplete pair types
 Plug 'jiangmiao/auto-pairs'
 
+" Syntax plugin for Rust
+Plug 'rust-lang/rust.vim'
+
 
 autocmd vimenter * NERDTree
 call plug#end()
