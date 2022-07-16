@@ -36,4 +36,6 @@ setup_node:
 	nvm alias default lts/fermium
 	nvm use default
 
+source_vim:
+	vim -E -c PlugInstall -c -q
 

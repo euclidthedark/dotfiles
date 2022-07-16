@@ -1,17 +1,14 @@
 " Specify a plugin directory
-call plug#begin('~/dotfiles/.vim/plugged')
+call plug#begin('~/dotfiles/.vim/autoload')
 
 " Dracula color theme
 Plug 'dracula/vim'
 
 " Darcula colorscheme
-Plug 'blueshirts/darcula'
+Plug 'doums/darcula'
 
 " Nerdtree a file navigation system for vim
 Plug 'preservim/nerdtree'
-
-" Autocomplete pair types
-Plug 'jiangmiao/auto-pairs'
 
 
 autocmd vimenter * NERDTree
@@ -32,5 +29,5 @@ set nobackup
 
 set number
 set colorcolumn=80
-highlight ColorColumn ctermbg=darkgray
+highlight ColorColumn ctermbg=white
 
