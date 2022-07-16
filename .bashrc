@@ -12,6 +12,10 @@ update_apt_packages () { sudo apt upgrade -y; }
 
 # bash plugins and customization
 
+# Exported Dirs
+
+export $my_code='~/projects'
+
 # Themes
 function _update_ps1() {
   PS1=$(powerline-shell $?)
