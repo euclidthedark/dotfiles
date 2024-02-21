@@ -7,7 +7,7 @@ return require('packer').startup(function(use)
 
   -- Telescope
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.1',
+	  'nvim-telescope/telescope.nvim', tag = '0.1.x',
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
@@ -46,5 +46,19 @@ return require('packer').startup(function(use)
 	  {'L3MON4D3/LuaSnip'},             -- Required
 	  {'rafamadriz/friendly-snippets'}, -- Optional
   	}
+  }
+
+  -- Code Error Hints
+  use 'folke/lsp-colors.nvim'
+  use {
+      "folke/trouble.nvim",
+      requires = "nvim-tree/nvim-web-devicons",
+      config = function()
+          require("trouble").setup {
+              -- your configuration comes here
+              -- or leave it empty to use the default settings
+              -- refer to the configuration section below
+          }
+      end
   }
 end)

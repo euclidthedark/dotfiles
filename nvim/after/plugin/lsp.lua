@@ -3,12 +3,28 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 lsp.ensure_installed({
+    -- nvim
+	"lua_ls",
+    "marksman",
 	-- bash
 	"bashls",
 	-- C Lang
 	"clangd",
 	"cmake",
-	"lua_ls",
+    -- golang
+    "gopls",
+    -- docker
+    "dockerls",
+    --- WEB
+    "eslint",
+    "cssls",
+    "html",
+    "tsserver",
+    "ltex",
+    -- Python
+    "jedi_language_server",
+    -- Rust
+    "rust_analyzer",
 })
 
 -- Fix Undefined global 'vim'
@@ -22,14 +38,13 @@ lsp.configure('lua-language-server', {
     }
 })
 
-
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-  ["<C-Space>"] = cmp.mapping.complete(),
+  ['<S-p>'] = cmp.mapping.select_prev_item(cmp_select),
+  ['<S-n>'] = cmp.mapping.select_next_item(cmp_select),
+  ['<S-y>'] = cmp.mapping.confirm({ select = true }),
+  ["<S-Space>"] = cmp.mapping.complete(),
 })
 
 cmp_mappings['<Tab>'] = nil
@@ -50,3 +65,7 @@ lsp.set_preferences({
 })
 
 lsp.setup()
+
+vim.diagnostic.config({
+    virtual_text = true
+})
