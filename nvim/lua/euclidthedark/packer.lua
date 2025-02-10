@@ -19,6 +19,9 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
 
+  -- rust-tools
+  use 'simrat39/rust-tools.nvim'
+
   -- LSP Server
   use {
 	  'VonHeikemen/lsp-zero.nvim',
@@ -55,6 +58,7 @@ return require('packer').startup(function(use)
       requires = "nvim-tree/nvim-web-devicons",
       config = function()
           require("trouble").setup {
+              auto_fold = true,
               -- your configuration comes here
               -- or leave it empty to use the default settings
               -- refer to the configuration section below

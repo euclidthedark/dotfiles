@@ -19,7 +19,7 @@ lsp.ensure_installed({
     "eslint",
     "cssls",
     "html",
-    "tsserver",
+    "ts_ls",
     "ltex",
     -- Python
     "jedi_language_server",
@@ -41,10 +41,10 @@ lsp.configure('lua-language-server', {
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<S-p>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<S-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<S-y>'] = cmp.mapping.confirm({ select = true }),
-  ["<S-Space>"] = cmp.mapping.complete(),
+  ['<Ctr-p>'] = cmp.mapping.select_prev_item(cmp_select),
+  ['<Ctr-n>'] = cmp.mapping.select_next_item(cmp_select),
+  ['<Ctr-y>'] = cmp.mapping.confirm({ select = true }),
+  ["<Ctr-Space>"] = cmp.mapping.complete(),
 })
 
 cmp_mappings['<Tab>'] = nil
@@ -64,7 +64,23 @@ lsp.set_preferences({
     }
 })
 
+lsp.on_attach(function(client, bufnr)
+  lsp.default_keymaps({buffer = bufnr})
+end)
+
+lsp.skip_server_setup({'rust_analyzer'})
+
 lsp.setup()
+
+local rust_tools = require('rust-tools')
+
+rust_tools.setup({
+  server = {
+    on_attach = function(_, bufnr)
+      vim.keymap.set('n', '<leader>ca', rust_tools.hover_actions.hover_actions, {buffer = bufnr})
+    end
+  }
+})
 
 vim.diagnostic.config({
     virtual_text = true
