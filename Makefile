@@ -1,41 +1,19 @@
-setup_linux:
-	sudo apt update -y && sudo apt upgrade -y
-	sudo apt install python build-essential cmake vim-nox python3-dev mono-complete golang tmux xclip pylint python3-pip
-	# install nvm
-	curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-	# install rustup for windows linux subsystem
-	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-	bash -c "$(wget https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh -O -)"
-	cat ~/dotfiles/.bashrc >> ~/.bashrc
+default: setup_c setup_neovim
 
-setup_tmux:
-	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-	ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
-	tmux source ~/.tmux.conf
+setup_c:
+	sudo apt install make cmake gcc g++
 
-setup_vim:
-	# Grab vim plug
-	rm -rf ~/.vimrc
-	ln -s ~/dotfiles/.vimrc ~/.vimrc
-	curl -fLo ~/dotfiles/.vim/autoload/plug.vim --create-dirs \
-	     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	ln -s ~/dotfiles/.vim ~/.vim
-	vim -E -c PlugInstall -c -q
+setup_git:
+	sudo apt install git
 
-setup_ycm:
-	python3 ~/dotfiles/.vim/plugged/youcompleteme/install.py --clangd-completer --go-completer --ts-completer --rust-completer
+setup_neovim: install_nvm install_py
+	sudo apt install ripgrep nvm && \
+	python3 -m pip install virtualenv
 
-setup_neovim:
-	sudo apt install neovim
-	mkdir -p ~/.config/nvim
-	touch ~/.config/nvim/init.vim
-	cat ~/dotfiles/nvim/init.vim >> ~/.config/nvim/init.vim
+install_nvm:
+	wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash && \
+	cat # NVM for Node #
+	cat export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" >> .bashrc
 
-setup_node:
-	nvm install lts/fermium
-	nvm alias default lts/fermium
-	nvm use default
-
-source_vim:
-	vim -E -c PlugInstall -c -q
-
+install_py:
+	sudo apt install python2 python3 pip python3-pip python3-venv
