@@ -47,7 +47,7 @@ cmp.setup({
   mapping = cmp.mapping.preset.insert({
       ['<Ctr-p>'] = cmp.mapping.select_prev_item(cmp_select),
       ['<Ctr-n>'] = cmp.mapping.select_next_item(cmp_select),
-      ['<Ctr-y>'] = cmp.mapping.confirm({ select = true }),
+      ['<cr>'] = cmp.mapping.confirm({ select = true }),
       ["<Ctr-Space>"] = cmp.mapping.complete(),
   }),
 })
